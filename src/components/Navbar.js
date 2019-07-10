@@ -4,6 +4,7 @@ import Toolbar from '@material-ui/core/Toolbar';
 import IconButton from '@material-ui/core/IconButton';
 import Typography from '@material-ui/core/Typography';
 import InputBase from '@material-ui/core/InputBase';
+
 import { fade, makeStyles } from '@material-ui/core/styles';
 import { withStyles } from '@material-ui/core/styles';
 import Menu from '@material-ui/core/Menu';
@@ -52,6 +53,7 @@ const useStyles = makeStyles(theme => ({
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
+
   },
   inputRoot: {
     color: 'inherit',
@@ -67,6 +69,7 @@ const useStyles = makeStyles(theme => ({
       },
     },
   },
+
 }));
 const StyledMenu = withStyles({
   paper: {
@@ -88,6 +91,7 @@ const StyledMenu = withStyles({
   />
 ));
 
+
 const StyledMenuItem = withStyles(theme => ({
   root: {
     '&:focus': {
@@ -99,6 +103,7 @@ const StyledMenuItem = withStyles(theme => ({
   },
 }))(MenuItem);
 export default function SearchAppBar() {
+
 
   const [anchorEl, setAnchorEl] = React.useState(null);
 
@@ -113,6 +118,7 @@ export default function SearchAppBar() {
   const classes = useStyles();
 
   return (
+
     <div className={classes.root}>
       <AppBar position="static">
         <Toolbar>
@@ -173,6 +179,7 @@ export default function SearchAppBar() {
             />
           </div>
         </Toolbar>
+
       </AppBar>
     </div>
   );
