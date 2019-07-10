@@ -2,6 +2,7 @@ import React from "react";
 import { connect } from "react-redux";
 import axios from "axios";
 import { users } from "../App.js";
+import { addUser } from "../components/LoginActions.js";
 
 class AddUserForm extends React.Component {
   constructor() {
@@ -80,4 +81,4 @@ class AddUserForm extends React.Component {
 export default connect(
   null,
   { addUser }
-)(AddUser);
+)(AddUserForm);
