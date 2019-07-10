@@ -8,12 +8,15 @@ import Signup from "./components/Signup";
 import NavBar from "./components/Navbar";
 import Books from "./components/Books";
 import Login from "./components/Login";
+import { S } from "xmlchars/xml/1.0/ed5";
 
 function App() {
   return (
     <React.Fragment>
       <NavBar />
       <Books />
+      <Login />
+      <Signup />
     </React.Fragment>
   );
 }
