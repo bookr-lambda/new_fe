@@ -91,9 +91,8 @@ export const bookList = [
     "etag": "f0zKg75Mx/I",
     "selfLink": "https://www.googleapis.com/books/v1/volumes/zyTCAlFPjgYC",
     "volumeInfo": {
-     "title": "The Google Story",
+     "title": "Not The Google Story",
      "authors": [
-      "David A. Vise",
       "Mark Malseed"
      ],
      "publisher": "Random House Digital, Inc.",
@@ -171,10 +170,9 @@ export const bookList = [
     "etag": "f0zKg75Mx/I",
     "selfLink": "https://www.googleapis.com/books/v1/volumes/zyTCAlFPjgYC",
     "volumeInfo": {
-     "title": "The Google Story",
+     "title": "A Different Google Story",
      "authors": [
       "David A. Vise",
-      "Mark Malseed"
      ],
      "publisher": "Random House Digital, Inc.",
      "publishedDate": "2005-11-15",

@@ -16,6 +16,7 @@ export default function Books() {
                     <Book
                         title={book.volumeInfo.title}
                         id={book.id}
+                        image={book.volumeInfo.imageLinks.thumbnail}
                         authors={book.volumeInfo.authors}
                         rating={book.volumeInfo.averageRating}
                         description={book.volumeInfo.description}
