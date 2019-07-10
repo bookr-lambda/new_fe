@@ -10,10 +10,25 @@ import Books from "./components/Books";
 import Login from "./components/Login";
 
 
+const useStyles = makeStyles(theme => ({
+  "@global": {
+    body: {
+      backgroundColor: "#AAAAAA"
+    },
+    ul: {
+      margin: 0,
+      padding: 0
+    },
+    li: {
+      listStyle: "none"
+    }
+  }
+}));
 
 
 function App() {
-  
+  const classes = useStyles();
+
   return (
     <React.Fragment>
       <NavBar />
