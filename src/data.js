@@ -2,7 +2,8 @@
 
 export const tabData = ['My Books', 'Reviews', 'Wishlist'];
 
-export const cardData = [
+
+export const bookList = [
 
   {
     "kind": "books#volume",
