@@ -56,6 +56,7 @@ const Book = props => {
               emptySymbol={<span className="icon-text">&#9734;</span>}
               fullSymbol={<span className="icon-text">&#9733;</span>}
               stop={5}
+              fractions={2}
             />
             </Typography>
           </Grid>
