@@ -10,6 +10,8 @@ import Books from "./components/Books";
 import Login from "./components/Login";
 import { S } from "xmlchars/xml/1.0/ed5";
 
+export const users = [];
+
 function App() {
   return (
     <React.Fragment>
