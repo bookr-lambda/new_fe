@@ -4,7 +4,7 @@ import { connect } from "react-redux";
 import Loader from "react-loader-spinner";
 
 import { login } from "../LoginActions.js";
-import { users } from "../App.js";
+import { signup } from "../App.js";
 
 class Login extends React.Component {
   // state = store.getState();
