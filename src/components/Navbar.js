@@ -7,7 +7,7 @@ import Grid from "@material-ui/core/Grid";
 import InputBase from '@material-ui/core/InputBase';
 // import SearchIcon from '@material-ui/icons/Search';
 
-import { makeStyles } from "@material-ui/core/styles";
+import { fade, makeStyles } from "@material-ui/core/styles";
 
 function TabContainer(props) {
   return (
@@ -18,20 +18,9 @@ function TabContainer(props) {
 }
 
 const useStyles = makeStyles(theme => ({
-  "@global": {
-    body: {
-      backgroundColor: "#AAAAAA"
-    },
-    ul: {
-      margin: 0,
-      padding: 0
-    },
-    li: {
-      listStyle: "none"
-    }
-  },
   appBar: {
-    borderBottom: `1px solid ${theme.palette.divider}`
+    borderBottom: `1px solid ${theme.palette.divider}`,
+    position: `relative`
   },
   toolbar: {
     flexWrap: "wrap"
@@ -39,10 +28,28 @@ const useStyles = makeStyles(theme => ({
   toolbarTitle: {
     flexGrow: 1
   },
+  search: {
+    position: 'relative',
+    borderRadius: theme.shape.borderRadius,
+    backgroundColor: fade(theme.palette.common.white, 0.15),
+    '&:hover': {
+      backgroundColor: fade(theme.palette.common.white, 0.25),
+    },
+    padding: theme.spacing(0.5, 2),
+    marginRight: theme.spacing(2),
+    marginLeft: 0,
+    width: '100%',
+    [theme.breakpoints.up('sm')]: {
+      marginLeft: theme.spacing(3),
+      width: 'auto',
+    },
+  },
   link: {
     margin: theme.spacing(1, 1.5)
   }
 }));
+
+
 
 export default function NavBar() {
   const classes = useStyles();
@@ -60,17 +67,19 @@ export default function NavBar() {
               </Typography>
             </Toolbar>
           </Grid>
-          <Grid item xs>
-          <div className={classes.search}>
-            <InputBase
-              placeholder="Search…"
-              classes={{
-                root: classes.inputRoot,
-                input: classes.inputInput,
-              }}
-              inputProps={{ 'aria-label': 'Search' }}
-            />
-          </div>
+          <Grid item xs></Grid>
+            <Grid item xs={3}>
+              <div className={classes.search}>
+                <InputBase
+                  placeholder="Search…"
+                  classes={{
+                    root: classes.inputRoot,
+                    input: classes.inputInput,
+                  }}
+                  inputProps={{ 'aria-label': 'Search' }}
+                />
+              </div>
+            
           </Grid>
         </Grid>
       </AppBar>
