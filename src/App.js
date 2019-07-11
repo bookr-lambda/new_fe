@@ -17,6 +17,13 @@ import Books from "./components/Books";
 import Login from "./components/Login";
 import { S } from "xmlchars/xml/1.0/ed5";
 
+function TabContainer(props) {
+  return (
+    <Typography component="div" style={{ padding: 8 * 3 }}>
+      {props.children}
+    </Typography>
+  );
+}
 const useStyles = makeStyles(theme => ({
   "@global": {
     body: {
@@ -29,6 +36,18 @@ const useStyles = makeStyles(theme => ({
     li: {
       listStyle: "none"
     }
+  },
+  appBar: {
+    borderBottom: `1px solid ${theme.palette.divider}`
+  },
+  toolbar: {
+    flexWrap: "wrap"
+  },
+  toolbarTitle: {
+    flexGrow: 1
+  },
+  link: {
+    margin: theme.spacing(1, 1.5)
   }
 }));
 
@@ -37,10 +56,10 @@ class App extends React.Component {
     return (
       <Router>
         <div className="App">
-          <nav className="navigation-bar">
+          {/* <nav className="navigation-bar">
             <div className="nav-links">
               <button>
-                <a href="https://bookr-lambda.netlify.com/">Home</a>
+                <Link to="/Books">Home</Link>
               </button>
               {this.props.isLoggedIn && <></>}
               <div>
@@ -56,8 +75,8 @@ class App extends React.Component {
                 </Link>
               )}
             </div>
-          </nav>
-
+          </nav> */}
+          <Route path="/Books" component={Books} />
           <Route path="/login" component={Login} />
           <Route path="/Signup" component={Signup} />
         </div>
