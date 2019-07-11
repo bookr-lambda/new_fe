@@ -23,7 +23,9 @@ class AddUserForm extends React.Component {
 
   handleSubmit = event => {
     event.preventDefault();
-    axios.post("http://", this.state).then(res => console.log(res.data));
+    axios
+      .post(" https://bookrbe.herokuapp.com/auth/register", this.state)
+      .then(res => console.log(res.data));
     this.props.history.push("/login");
   };
 
