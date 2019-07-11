@@ -7,7 +7,7 @@ import {
   FETCH_USER_SUCCESSFUL,
   ADD_USER_START,
   ADD_USER_SUCCESS
-} from "./index";
+} from "../components/LoginActions.js";
 
 const initialState = {
   user: [],

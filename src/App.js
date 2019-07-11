@@ -27,7 +27,7 @@ class App extends React.Component {
           <nav className="navigation-bar">
             <div className="nav-links">
               <button>
-                <a href="https://">Home</a>
+                <a href="https://bookr-lambda.netlify.com/">Home</a>
               </button>
               {this.props.isLoggedIn && <></>}
               <div>
@@ -58,9 +58,12 @@ function logout() {
   window.location.reload(true);
 }
 
-const mapStateToProps = state => ({
-  isLoggedIn: state.isLoggedIn,
-  user: state.user
-});
+export default withRouter(App);
 
-export default (mapStateToProps, {})(App);
+// const mapStateToProps = state => ({
+//   isLoggedIn: state.isLoggedIn,
+//   user: state.user
+// });
+
+// const mainApp = connect (mapStateToProps)
+// export default (mapStateToProps, {})(App);
