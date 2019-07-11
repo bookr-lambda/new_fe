@@ -17,7 +17,20 @@ import Books from "./components/Books";
 import Login from "./components/Login";
 import { S } from "xmlchars/xml/1.0/ed5";
 
-export const users = [];
+const useStyles = makeStyles(theme => ({
+  "@global": {
+    body: {
+      backgroundColor: "#AAAAAA"
+    },
+    ul: {
+      margin: 0,
+      padding: 0
+    },
+    li: {
+      listStyle: "none"
+    }
+  }
+}));
 
 class App extends React.Component {
   render() {
