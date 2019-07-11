@@ -8,7 +8,7 @@ import { makeStyles } from "@material-ui/core/styles";
 import Rating from "react-rating";
 const useStyles = makeStyles(theme => ({
   book: {
-    display: 'flex',
+    display: "flex",
     margin: theme.spacing(3, 5.5),
     padding: theme.spacing(3),
     height: theme.spacing(20)
@@ -17,7 +17,7 @@ const useStyles = makeStyles(theme => ({
     fontSize: 20
   },
   cover: {
-    width: 151,
+    width: 151
   }
 }));
 
@@ -27,47 +27,47 @@ const Book = props => {
   return (
     <React.Fragment>
       <Card className={classes.book}>
-      <CardMedia
-        className={classes.cover}
-        image={props.image}
-        title={props.title}
-      />
-      <CardContent>
-        <Grid container direction="row" justify="center" alignItems="center">
-          <Grid item xs={6}>
-            <Typography variant="h4" color="inherit">
-              {props.title}
-            </Typography>
+        <CardMedia
+          className={classes.cover}
+          image={props.image}
+          title={props.title}
+        />
+        <CardContent>
+          <Grid container direction="row" justify="center" alignItems="center">
+            <Grid item xs={6}>
+              <Typography variant="h4" color="inherit">
+                {props.title}
+              </Typography>
+            </Grid>
+            <Grid item xs />
+            {props.authors.map(author => {
+              return (
+                <Grid item xs={2}>
+                  <span className={classes.author}>{author}</span>
+                </Grid>
+              );
+            })}
           </Grid>
-          <Grid item xs />
-          {props.authors.map(author => {
-            return (
-              <Grid item xs={2}>
-                <span className={classes.author}>{author}</span>
-              </Grid>
-            );
-          })}
-        </Grid>
-        <Grid container direction="row" justify="center" alignItems="center">
-          <Grid item xs={2}>
-            <Typography variant="h5" color="inherit">
-              {props.rating} STARS
-              <Rating
-              emptySymbol={<span className="icon-text">&#9734;</span>}
-              fullSymbol={<span className="icon-text">&#9733;</span>}
-              stop={5}
-              fractions={2}
-            />
-            </Typography>
+          <Grid container direction="row" justify="center" alignItems="center">
+            <Grid item xs={2}>
+              <Typography variant="h5" color="inherit">
+                {props.rating} STARS
+                <Rating
+                  emptySymbol={<span className="icon-text">&#9734;</span>}
+                  fullSymbol={<span className="icon-text">&#9733;</span>}
+                  stop={5}
+                  fractions={2}
+                />
+              </Typography>
+            </Grid>
+            <Grid item xs />
           </Grid>
-          <Grid item xs />
-        </Grid>
-        <Grid container direction="row" justify="center" alignItems="center">
-          <Grid item>
-            <p>{props.description}</p>
+          <Grid container direction="row" justify="center" alignItems="center">
+            <Grid item>
+              <p>{props.description}</p>
+            </Grid>
           </Grid>
-        </Grid>
-        {/* <div>
+          {/* <div>
           <ReviewContainer reviews={props.reviews} />
           <form onSubmit = {(e) => props.addNewComment(e)} >
             <input 
@@ -78,7 +78,7 @@ const Book = props => {
             />
           </form>
         </div> */}
-      </CardContent>
+        </CardContent>
       </Card>
     </React.Fragment>
   );
