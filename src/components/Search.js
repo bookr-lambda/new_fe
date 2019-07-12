@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { FormGroup, FormControl, InputGroup, Glyphicon } from 'react-bootstrap';
 import SearchResults from './SearchResults.js';
-
+import './Search.css';
 class SearchBook extends Component {
   constructor(props) {
     super(props);

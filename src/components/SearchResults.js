@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import bookimg from '../images/bookimg.svg';
 import Book from './Book.js';
-
+import './Search.css';
 class SearchResults extends Component {
 
   render() {
