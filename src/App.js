@@ -67,8 +67,8 @@ function IsNotLoggedIn(props) {
     <Router>
       <div className="App">
         <NavBar />
-        <Route path="/login" component={Login} />
-        <Route path="/Signup" component={Signup} />
+        <Route path="/" component={Login} />
+        <Route path="/Signup" component={Signup} exact />
       </div>
     </Router>
   )
