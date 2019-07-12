@@ -27,6 +27,15 @@ class Login extends React.Component {
     console.log(this.state);
   };
 
+  handleSubmit = event => {
+    event.preventDefault();
+    axios
+      .post("https://bookrbe.herokuapp.com/auth/login", this.state)
+      .then(res => console.log(res.data));
+    this.props.history.push("/login");
+  };
+
+
   handleClick = e => {
     e.preventDefault();
     this.props.login(this.state.credentials).then(() => {
