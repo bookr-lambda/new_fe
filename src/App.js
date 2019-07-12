@@ -51,37 +51,37 @@ const useStyles = makeStyles(theme => ({
   }
 }));
 
+function IsLoggedIn(props) {
+  return (
+    <Router>
+      <div className="App">
+        <NavBar />
+        <Route path="/" component={Books} />
+      </div>
+    </Router>
+  )
+}
+
+function IsNotLoggedIn(props) {
+  return (
+    <Router>
+      <div className="App">
+        <NavBar />
+        <Route path="/login" component={Login} />
+        <Route path="/Signup" component={Signup} />
+      </div>
+    </Router>
+  )
+}
+
 class App extends React.Component {
+
+  state = {
+    userVerified: true
+  };
+
   render() {
-    return (
-      <Router>
-        <div className="App">
-          {/* <nav className="navigation-bar">
-            <div className="nav-links">
-              <button>
-                <Link to="/Books">Home</Link>
-              </button>
-              {this.props.isLoggedIn && <></>}
-              <div>
-                <NavLink to="/signup">Register</NavLink>
-              </div>
-            </div>
-            <div>
-              {!this.props.isLoggedIn ? (
-                <Link to="/login">Log In</Link>
-              ) : (
-                <Link to="/" onClick={logout}>
-                  Log Out
-                </Link>
-              )}
-            </div>
-          </nav> */}
-          <Route path="/Books" component={Books} />
-          <Route path="/login" component={Login} />
-          <Route path="/Signup" component={Signup} />
-        </div>
-      </Router>
-    );
+    return this.state.userVerified ? IsLoggedIn() : IsNotLoggedIn()
   }
 }
 

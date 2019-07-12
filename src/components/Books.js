@@ -10,7 +10,6 @@ export default function Books() {
 
   return (
     <React.Fragment>
-      <Navbar />
       {bookList.map(book => {
         return (
           <Book
