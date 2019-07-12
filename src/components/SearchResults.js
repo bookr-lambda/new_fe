@@ -10,18 +10,19 @@ class SearchResults extends Component {
         this.props.items.map( (item, index) => {
           let { title, authors, averageRating, description, publishedDate, imageLinks, infoLink } = item.volumeInfo;
           return (
-            <a
-              key={index}
+            <h1>
+                <a key={index}
               className="book"
               href={infoLink}
               target="_blank"
-              rel="noopener"
-              >
-              <img
+              rel="noopener">
+                <img
                 src={undefined !== imageLinks ? imageLinks.thumbnail : {bookimg}}
                 alt={`Book Cover for ${title}.`}
                 className="bookCover"
               />
+                </a>
+              
               <header className="bookTitle">
                 {title} by {authors}
               </header>
@@ -29,7 +30,7 @@ class SearchResults extends Component {
                 {averageRating}
                 <Book />
               </div>
-            </a>
+            </h1>
           )
         })
       }</div>
