@@ -27,7 +27,7 @@ class SearchResults extends Component {
                 {title} by {authors}
               </header>
               <div>
-                {averageRating}
+               Average Rating:  {averageRating}
                 <Book />
               </div>
             </h1>

@@ -4,7 +4,7 @@ import Card from "@material-ui/core/Card";
 import CardContent from "@material-ui/core/CardContent";
 import CardMedia from "@material-ui/core/CardMedia";
 import { makeStyles } from "@material-ui/core/styles";
-// import ReviewContainer from "../components/Reviews/ReviewContainer";
+import ReviewContainer from "../components/Reviews/ReviewContainer";
 import Rating from "react-rating";
 const useStyles = makeStyles(theme => ({
   book: {
@@ -51,7 +51,7 @@ const Book = props => {
         <Grid container direction="row" justify="center" alignItems="center">
           <Grid item xs={2}>
             <Typography variant="h5" color="inherit">
-              {props.rating} STARS
+              {props.rating} Rate it!   
               <Rating
               emptySymbol={<span className="icon-text">&#9734;</span>}
               fullSymbol={<span className="icon-text">&#9733;</span>}
@@ -67,8 +67,8 @@ const Book = props => {
             <p>{props.description}</p>
           </Grid>
         </Grid> */}
-        {/* <div>
-          <ReviewContainer reviews={props.reviews} />
+        <div>
+          <ReviewContainer reviews={props.reviews} />Write a Review
           <form onSubmit = {(e) => props.addNewComment(e)} >
             <input 
               name='newReviewText'
@@ -77,7 +77,7 @@ const Book = props => {
               placehodler="Leave a review..."
             />
           </form>
-        </div> */}
+        </div>
       {/* </CardContent>
       </Card> */}
     </React.Fragment>
