@@ -16,6 +16,7 @@ import SearchIcon from '@material-ui/icons/Search';
 import WishListIcon from '@material-ui/icons/Favorite';
 import BookIcon from '@material-ui/icons/Book';
 import GroupIcon from '@material-ui/icons/Group';
+import SearchResults from './SearchResults.js';
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -165,9 +166,10 @@ export default function SearchAppBar() {
           <Typography className={classes.title} variant="h6" noWrap>
             Bookr
           </Typography>
-          <div className={classes.search}>
+          {/* <div className={classes.search}>
             <div className={classes.searchIcon}>
               <SearchIcon />
+              
             </div>
             <InputBase
               placeholder="Find A Book"
@@ -177,10 +179,13 @@ export default function SearchAppBar() {
               }}
               inputProps={{ 'aria-label': 'Search' }}
             />
-          </div>
+          </div> */}
         </Toolbar>
-
+        
       </AppBar>
+      
     </div>
+    
   );
 }
+

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import book from '../images/book.svg';
+import bookimg from '../images/bookimg.svg';
+import Book from './Book.js';
 
 class SearchResults extends Component {
 
@@ -7,7 +8,7 @@ class SearchResults extends Component {
     return (
       <div>{
         this.props.items.map( (item, index) => {
-          let { title, authors, description, publishedDate, imageLinks, infoLink } = item.volumeInfo;
+          let { title, authors, averageRating, description, publishedDate, imageLinks, infoLink } = item.volumeInfo;
           return (
             <a
               key={index}
@@ -17,7 +18,7 @@ class SearchResults extends Component {
               rel="noopener"
               >
               <img
-                src={undefined !== imageLinks ? imageLinks.thumbnail : {book}}
+                src={undefined !== imageLinks ? imageLinks.thumbnail : {bookimg}}
                 alt={`Book Cover for ${title}.`}
                 className="bookCover"
               />
@@ -25,8 +26,8 @@ class SearchResults extends Component {
                 {title} by {authors}
               </header>
               <div>
-                {/* {publishedDate}
-                {description} */}
+                {averageRating}
+                <Book />
               </div>
             </a>
           )

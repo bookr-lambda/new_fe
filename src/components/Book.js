@@ -26,7 +26,7 @@ const Book = props => {
 
   return (
     <React.Fragment>
-      <Card className={classes.book}>
+      {/* <Card className={classes.book}>
       <CardMedia
         className={classes.cover}
         image={props.image}
@@ -47,7 +47,7 @@ const Book = props => {
               </Grid>
             );
           })}
-        </Grid>
+        </Grid> */}
         <Grid container direction="row" justify="center" alignItems="center">
           <Grid item xs={2}>
             <Typography variant="h5" color="inherit">
@@ -62,11 +62,11 @@ const Book = props => {
           </Grid>
           <Grid item xs />
         </Grid>
-        <Grid container direction="row" justify="center" alignItems="center">
+        {/* <Grid container direction="row" justify="center" alignItems="center">
           <Grid item>
             <p>{props.description}</p>
           </Grid>
-        </Grid>
+        </Grid> */}
         {/* <div>
           <ReviewContainer reviews={props.reviews} />
           <form onSubmit = {(e) => props.addNewComment(e)} >
@@ -78,8 +78,8 @@ const Book = props => {
             />
           </form>
         </div> */}
-      </CardContent>
-      </Card>
+      {/* </CardContent>
+      </Card> */}
     </React.Fragment>
   );
 };
