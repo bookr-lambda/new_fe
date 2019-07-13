@@ -1,14 +1,35 @@
-import React from "react";
+import React, { Component } from "react";
 import Book from "./Book";
 
-function getBooks() {
-  const URL = `https://www.googleapis.com/books/v1/volumes?q=''`
-  return fetch(URL)
-  .then(response => response.json())
-  .then(function(data) {
+
+
+
+
+class Books extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      items: []
+    };
+  }
+
+  getBooks() {
+    const URL = `https://www.googleapis.com/books/v1/volumes?q=''`
+    return fetch(URL)
+    .then(response => response.json())
+    .then(json => {
+      let { items } = json;
+      this.setState({ items })
+    })
+    .catch(error => console.error(error))
+  }
+
+  render() {
+    this.getBooks();
+
     return (
       <React.Fragment>
-        {data.items.map(book => {
+        {this.state.items.map(book => {
           return (
             <Book
               title={book.volumeInfo.title}
@@ -23,12 +44,7 @@ function getBooks() {
         })}
       </React.Fragment>
     )
-  })
-  .catch(error => console.error(error))
+  }
 }
 
-
-
-export default function Books() {
-  return getBooks();
-}
+export default Books
